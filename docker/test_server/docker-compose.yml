@@ -18,6 +18,7 @@ services:
       - et1_assets:/home/app/full_system/systems/et1/public/apply/assets
       - et3_assets:/home/app/full_system/systems/et3/public/assets
       - admin_assets:/home/app/full_system/systems/admin/public/assets
+      - s3_data:/home/app/minio_data
     environment:
       DB_HOST: 'db'
       DB_USERNAME: 'postgres'
@@ -79,6 +80,7 @@ volumes:
   et1_assets:
   et3_assets:
   admin_assets:
+  s3_data:
 networks:
   et_full_system:
 

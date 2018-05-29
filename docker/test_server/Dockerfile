@@ -29,7 +29,7 @@ RUN /pd_build/ruby-2.3.*.sh
 #RUN /pd_build/nodejs.sh
 
 # ...put your own build instructions here...
-RUN apt-get update && apt-get -y install pdftk tzdata postgresql gettext-base
+RUN apt-get update && apt-get -y install pdftk tzdata postgresql gettext-base wget
 RUN /pd_build/nodejs.sh
 
 # ...put your own build instructions here...
@@ -41,7 +41,8 @@ RUN rm -f /etc/service/nginx/down
 # Enable the Redis service.
 RUN rm -f /etc/service/redis/down
 
-
+# Install minio
+RUN bash -lc "cd /usr/local/bin && wget https://dl.minio.io/server/minio/release/linux-amd64/minio && chmod +x minio"
 
 # Copy configs
 RUN rm /etc/nginx/sites-enabled/default
@@ -56,12 +57,11 @@ RUN mkdir /etc/service/s3
 COPY docker/test_server/s3.sh /etc/service/s3/run
 RUN chmod +x /etc/service/s3/run
 
-# Create the js directory for the s3 server
-RUN mkdir -p /home/app/js; chown app:app /home/app/js
+# Create the minio_data directory for the minio server
+RUN mkdir -p /home/app/minio_data; chown app:app /home/app/minio_data; chmod 0777 /home/app/minio_data
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /home/app/full_system; chown app:app /home/app/full_system
-RUN bash -lc "cd /home/app/js && git clone https://github.com/scality/S3.git && cd S3 && git checkout tags/GA7.2.0.4 && npm install"
 WORKDIR /home/app/full_system/systems

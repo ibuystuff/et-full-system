@@ -30,7 +30,6 @@ fi
 envsubst '$$SERVER_PORT $$SERVER_DOMAIN' < /home/app/full_system/docker/test_server/nginx_config/s3_server.conf.template > /etc/nginx/sites-enabled/s3_server.conf
 envsubst '$$SERVER_PORT $$SERVER_DOMAIN' < /home/app/full_system/docker/test_server/sidekiq_init_templates/sidekiq_api.sh.template > /etc/service/sidekiq_api/run
 envsubst '$$SERVER_PORT $$SERVER_DOMAIN' < /home/app/full_system/docker/test_server/sidekiq_init_templates/sidekiq_et1.sh.template > /etc/service/sidekiq_et1/run
-envsubst '$$SERVER_PORT $$SERVER_DOMAIN' < /home/app/full_system/docker/test_server/s3_server_config/config.json.template > /home/app/js/S3/config.json
 chmod +x /etc/service/sidekiq_api/run
 chmod +x /etc/service/sidekiq_et1/run
 cd docker/test_server

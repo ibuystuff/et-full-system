@@ -6,9 +6,10 @@ whilst developing the jadu replacement system.
 
 This allows the test suite to test the entire system to live in this code base - as docker-compose can setup the entire system for you.
 
-Of course, you can do it yourself without docker compose if you have the time and patience to run all of the services, setting
-them up on the right ports, configuring the URLs for each service to talk to another etc..  If you do want to go down this route,
-you are on your own for now !!  But, take a look at the diagram below and the files in the docker/test_servers folder - the docker-compose.yml and you can see the
+Of course, you can do it yourself without docker compose and this is getting easier and easier now we have switched to
+all services running behind a single nginx server and using passenger to deal with the rails apps.
+If you do want to go down this route, you are on your own for now !!  But, take a look at the diagram below and the files
+in the docker/test_server folder - the docker-compose.yml and you can see the
 different services and how they are setup to talk to one another - you need to achieve the same thing but running everything on localhost.
 
 The above could be done using 'foreman' (which is partly done in bin/foreman) to bring everything together and if someone 
@@ -18,8 +19,8 @@ then please reach out to me (Gary Taylor) - or just do it and share it !!
 A diagram speaks a thousand words - so hopefully the diagram below will show what I mean.  This is how the docker environment
 is setup.  Again, a similar environment using something like 'foreman' could also be setup with some careful configuration.
 
-Also note that the 'test servers' are intended to be as close to production as is possible from a config and general architecture point of view, not
-performance / scaling.  Hence they run in 'production' environment, but configured to use a test SMTP and AWS/S3 server (pre built docker containers).
+Also note that the 'test server' are intended to be as close to production as is possible from a config and general architecture point of view, not
+performance / scaling.  Hence they run in 'production' environment, but configured to use a test SMTP (mailhog) and AWS/S3 server (minio).
 
 The test SMTP server allows the test suite (via REST) or the developer (via a web page / web server - details further down vvvvv) to see what emails the
 application(s) would have sent if they were really being sent to users.
@@ -27,6 +28,8 @@ application(s) would have sent if they were really being sent to users.
 The test AWS/S3 server allows normal S3 requests to take place - i.e. adding files to buckets, deleting them etc.. and these files being made available via
 a URL which is accessible within the docker network (or outside if you setup port forwarding).  This means we can test without running up bills or even having
 to enter any S3 credential which quite rightly, developers do not really want to do as it may run up bills on their card.
+Note that this uses a server called 'minio' which is available for just about any platform.
+Minio has a web interface at http://s3.et.127.0.0.1.nip.io:3100 (unless you have changed the domain or port - then adjust as necessary)
 
 ## Diagram Showing Test Servers and Test Framework Systems
 

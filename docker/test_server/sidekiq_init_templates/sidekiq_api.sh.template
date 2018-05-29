@@ -7,6 +7,7 @@ export REDIS_DATABASE=2
 export AWS_ACCESS_KEY_ID=accessKey1
 export AWS_SECRET_ACCESS_KEY=verySecretKey1
 export S3_UPLOAD_BUCKET=etapibucket
+export S3_DIRECT_UPLOAD_BUCKET=etapidirectbucket
 export AWS_REGION=us-east-1
 export AWS_ENDPOINT=http://s3.${SERVER_DOMAIN}:${SERVER_PORT}
 export AWS_S3_FORCE_PATH_STYLE=true
