@@ -9,10 +9,47 @@ Group of all ET1-related resources.
 
 This group is primarily focussed on the ET1 web form.
 
-# Group ET3 [v2/respondents]
-Group of all ET3-related resources.
+# Group ET3 S3 Upload [v2/s3]
+Group for ET3 to S3 resources, via the API.
 
-This group is primarily focussed on the ET3 web form.
+This group controls data flow between an ET3 browser session and the S3 bucket.
+
+## Create Signed URL [v2/s3/create_signed_url]
+Speaks to the S3 controller on behalf of ET3 to return the presigned URL (and other data)
+that ET3 needs to upload directly to S3.
+
+### Receive a Request [POST]
+
++ Request (application/json)
+
+        {
+            "uuid": "96a709a1-a0e7-452d-afd6-1cca6f3d7f68",
+            "command": "CreateSignedS3FormData",
+            "async": false
+        }
+
++ Response 202 (application/json)
+        {
+            "status": "accepted",
+            "meta": {},
+            "uuid": "8e161d2e-9ce9-43f2-99a3-d8e0772438b7",
+            "data": {
+                "fields": {
+                    "key": "direct_uploads/b8cc8e2d-d568-4c33-ba10-f4b3946b119a",
+                    "policy": "eyJleHBpcmF0aW9uIjoiMjAxOC0wNi0yMlQxNjo0Nzo1OFoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJldGFwaWRpcmVjdGJ1Y2tldCJ9LHsia2V5IjoiZGlyZWN0X3VwbG9hZHMvYjhjYzhlMmQtZDU2OC00YzMzLWJhMTAtZjRiMzk0NmIxMTlhIn0seyJ4LWFtei1jcmVkZW50aWFsIjoiYWNjZXNzS2V5MS8yMDE4MDYyMi91cy1lYXN0LTEvczMvYXdzNF9yZXF1ZXN0In0seyJ4LWFtei1hbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In0seyJ4LWFtei1kYXRlIjoiMjAxODA2MjJUMTU0NzU4WiJ9XX0=",
+                    "x-amz-credential": "accessKey1/20180622/us-east-1/s3/aws4_request",
+                    "x-amz-algorithm": "AWS4-HMAC-SHA256",
+                    "x-amz-date": "20180622T154758Z",
+                    "x-amz-signature": "c01d3d8ab864df732363425ae0eabfcd53f54cb0d1de3fc0444671325a567c80"
+                },
+                "url": "http://s3.et.127.0.0.1.nip.io:3100/etapidirectbucket"
+            }
+        }
+
+# Group ET3 [v2/respondents]
+Group of all ET3 submission-related resources.
+
+This group is primarily focussed on the ET3 web form data.
 
 ## Response [v2/respondents/build_response]
 Creates a respondent response within the system and returns confirmation.
