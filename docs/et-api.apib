@@ -20,6 +20,8 @@ that ET3 needs to upload directly to S3.
 
 ### Receive a Request [POST]
 
+Responds with the data that ET3 requires to upload directly to S3.
+
 + Request (application/json)
 
         {
@@ -29,6 +31,16 @@ that ET3 needs to upload directly to S3.
         }
 
 + Response 202 (application/json)
+
+    + Attributes (object)
+
+        + fields: {} (object)
+
+            Each key-value pair represents an HTML form input field and its value.
+            These fields will be validated by S3 to enable the file to be uploaded.
+    
+    + Body
+
         {
             "status": "accepted",
             "meta": {},
