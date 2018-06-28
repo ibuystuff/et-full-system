@@ -163,11 +163,13 @@ Creates a respondent response within the system and returns confirmation.
 + Response 201 (application/json)
 
         {
-            "data": {
-                "reference": "992000000100",
-                "submitted_at": "2018-01-01",
-                "pdf_url": "s3/link/to/form.pdf",
-                "office_address_attributes": "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
+            "meta": {
+                "BuildResponse": {
+                    "reference": "142000000100",
+                    "submitted_at": "2018-01-13 14:00",
+                    "pdf_url": "s3/link/to/form.pdf",
+                    "office_address": "Alexandra House, 14-22 The Parsonage, Manchester, M3 2JA"
+                }
             }
         }
 
