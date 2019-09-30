@@ -11,14 +11,14 @@ group :test do
   gem 'site_prism', '~> 2.9'
   gem 'i18n', '~> 0.8'
   gem 'activesupport', '~> 5.2'
-  gem 'selenium-webdriver', '~> 3.10'
+  gem 'selenium-webdriver', '~> 3.10', '>= 3.10.0'
   gem 'chromedriver-helper', '~> 1.1'
   gem 'geckodriver-helper', '~> 0.0'
   gem 'capybara-screenshot', '~> 1.0'
   gem 'cucumber', '~> 3.1'
   gem 'aws-sdk-s3', '~> 1.9'
   # Rubyzip used to test zip files
-  gem 'rubyzip', '~> 1.2', '>= 1.2.1'
+  gem 'rubyzip', '~> 1.3', '>= 1.3.0'
   # HTTParty - used to download from ATOS API during tests
   gem 'httparty', '~> 0.16.2'
   gem 'pry'
