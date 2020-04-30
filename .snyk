@@ -1,0 +1,36 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - S3 > async > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > Arsenal > async > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > Arsenal > ioredis > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > utapi > ioredis > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > utapi > async > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > bucketclient > Arsenal > async > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > vaultclient > Arsenal > async > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > utapi > Arsenal > async > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > bucketclient > Arsenal > ioredis > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > vaultclient > Arsenal > ioredis > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > utapi > Arsenal > ioredis > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > vaultclient > xml2js > xmlbuilder > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > utapi > vaultclient > Arsenal > async > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > utapi > vaultclient > Arsenal > ioredis > lodash:
+        patched: '2020-04-30T21:49:44.596Z'
+    - S3 > utapi > vaultclient > xml2js > xmlbuilder > lodash:
+        patched: '2020-04-30T21:49:44.596Z'

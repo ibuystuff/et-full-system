@@ -7,7 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,8 @@
   },
   "homepage": "https://github.com/ministryofjustice/et-full-system#readme",
   "dependencies": {
-    "s3": "git+https://github.com/scality/S3.git#GA7.2.0.4"
-  }
+    "s3": "git+https://github.com/scality/S3.git#GA7.2.0.4",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
