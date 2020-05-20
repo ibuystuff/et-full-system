@@ -10,7 +10,7 @@ group :test do
   gem 'capybara', '~> 2.17'
   gem 'site_prism', '~> 2.9'
   gem 'i18n', '~> 0.8'
-  gem 'activesupport', '~> 5.2'
+  gem 'activesupport', '~> 5.2', '>= 5.2.4.3'
   gem 'selenium-webdriver', '~> 3.10'
   gem 'chromedriver-helper', '~> 1.1'
   gem 'geckodriver-helper', '~> 0.0'
@@ -24,7 +24,7 @@ group :test do
   gem 'pry'
   # Pdf forms to test pdf content
   gem 'pdf-forms', '~> 1.1', '>= 1.1.1'
-  gem 'factory_bot'
+  gem 'factory_bot', '>= 4.8.2'
   gem 'settingslogic'
   gem 'parallel_tests'
 end
