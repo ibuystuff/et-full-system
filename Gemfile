@@ -15,7 +15,7 @@ group :test do
   gem 'chromedriver-helper', '~> 1.1'
   gem 'geckodriver-helper', '~> 0.0'
   gem 'capybara-screenshot', '~> 1.0'
-  gem 'cucumber', '~> 3.1'
+  gem 'cucumber', '~> 4.0', '>= 4.0.0'
   gem 'aws-sdk-s3', '~> 1.9'
   # Rubyzip used to test zip files
   gem 'rubyzip', '~> 1.2', '>= 1.2.1'
