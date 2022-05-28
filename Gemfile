@@ -7,14 +7,14 @@ end
 
 group :test do
   gem 'rspec', '~> 3.7'
-  gem 'capybara', '~> 2.17'
-  gem 'site_prism', '~> 2.9'
+  gem 'capybara', '~> 2.18', '>= 2.18.0'
+  gem 'site_prism', '~> 2.10'
   gem 'i18n', '~> 0.8'
   gem 'activesupport', '~> 5.2'
   gem 'selenium-webdriver', '~> 3.10'
   gem 'chromedriver-helper', '~> 1.1'
   gem 'geckodriver-helper', '~> 0.0'
-  gem 'capybara-screenshot', '~> 1.0'
+  gem 'capybara-screenshot', '~> 1.0', '>= 1.0.18'
   gem 'cucumber', '~> 3.1'
   gem 'aws-sdk-s3', '~> 1.9'
   # Rubyzip used to test zip files
