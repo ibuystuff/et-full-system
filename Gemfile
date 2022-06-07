@@ -16,7 +16,7 @@ group :test do
   gem 'geckodriver-helper', '~> 0.0'
   gem 'capybara-screenshot', '~> 1.0'
   gem 'cucumber', '~> 3.1'
-  gem 'aws-sdk-s3', '~> 1.9'
+  gem 'aws-sdk-s3', '~> 1.9', '>= 1.9.0'
   # Rubyzip used to test zip files
   gem 'rubyzip', '~> 1.2', '>= 1.2.1'
   # HTTParty - used to download from ATOS API during tests
